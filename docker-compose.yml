@@ -1,0 +1,8 @@
+services:
+  pubsub:
+    image: flowlab/flow-bigtable:latest
+    ports:
+      - 8539:8539
+    command: ["--host-port=0.0.0.0:8539", "--project=${BIGTABLE_PROJECT_ID:-diatom-ai}"]
+    environment:
+      - BIGTABLE_PROJECT_ID
